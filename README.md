@@ -20,7 +20,7 @@ The module solves the problem by allowing the editor to select any text inside o
 ## Video link
 
 
-⟹ [Replace this Video link](https://youtu.be/vnC0zOP8Byc)
+⟹ [Video link](https://youtu.be/vnC0zOP8Byc)
 
 ## Pre-requisites and Dependencies
 
