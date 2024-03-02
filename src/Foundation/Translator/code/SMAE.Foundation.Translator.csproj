@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{96958A52-75A8-40B8-8EAE-556C848889D3}</ProjectGuid>
+    <ProjectGuid>{B5A908E2-E524-4E5D-BE20-63504DA11922}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -50,7 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Foundation\Foundation.Sitercore.Services.Client.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Translate.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
