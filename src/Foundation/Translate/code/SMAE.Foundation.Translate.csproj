@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Config\Include\Foundation\Foundation.Sitercore.Services.Client.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Translate.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
