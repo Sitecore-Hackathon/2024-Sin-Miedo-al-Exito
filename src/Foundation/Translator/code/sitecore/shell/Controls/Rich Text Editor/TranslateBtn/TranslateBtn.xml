@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+    <RichText.TranslateBtn>
+        <FormDialog Icon="Network/32x32/link.png" Header="Select your language"
+          Text="Insert a html code." OKButton="Translate">
+
+            <script Type="text/javascript" Language="javascript" Src="/sitecore/shell/Controls/Rich Text Editor/TranslateBtn/TranslateBtnCommands.js">.</script>
+
+            <CodeBeside Type="SMAE.Foundation.Translator.Repository.TranslateBtn,SMAE.Foundation.Translator"/>
+
+            <Border Padding="4px 10px 4px 0px">
+                <GridPanel Width="100%" Columns="2">
+                    <Border Padding="0px 4px 10px 10px">
+                        <Literal Text="From:"/>
+                    </Border>
+                    <Listbox ID="LanguagesList" Width="97%" GridPanel.Width="80%"/>
+                    <Border Padding="0px 4px 10px 10px">
+                        <Literal Text="To:"/>
+                    </Border>
+                    <Listbox ID="LanguagesList2" Width="97%" GridPanel.Width="80%"/>
+                </GridPanel>
+            </Border>
+        </FormDialog>
+    </RichText.TranslateBtn>
+</control>
