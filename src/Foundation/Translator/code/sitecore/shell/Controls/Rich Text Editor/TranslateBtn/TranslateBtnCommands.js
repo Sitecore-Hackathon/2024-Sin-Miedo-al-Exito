@@ -2,7 +2,6 @@
 var scEditor = null;
 var scTool = null;
 
-//Set the Id of your button into the RadEditorCommandList[]
 Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, editor, args) {
     var d = Telerik.Web.UI.Editor.CommandList._getLinkArgument(editor);
     Telerik.Web.UI.Editor.CommandList._getDialogArguments(d, "A", editor, "DocumentManager");
@@ -38,10 +37,8 @@ function scTranslateBtnCallback(sender, returnValue) {
 
 }
 
+//OpenAI API KEY
 
-
-
-//FT CODE
 const apiKey = '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';
 
 // Make the API request

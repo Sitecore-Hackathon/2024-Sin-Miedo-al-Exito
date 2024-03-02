@@ -29,7 +29,7 @@
 
                     <Literal Text="To:" Style="margin-bottom:5px;"  ID="textTo"/>
 
-                    <Listbox ID="LanguagesList2"/>
+                    <Listbox ID="LanguagesList"/>
 
                     <Memo ID="memCode" Width="100%" ></Memo>
 

@@ -12,9 +12,14 @@ namespace SMAE.Foundation.Translator.Repository
 {
     public class TranslateBtn : DialogForm
     {
-        // Fields
-        protected Listbox LanguagesList2;
+        // Fields from the dialog
+        protected Listbox LanguagesList;
         protected Memo memCode;
+        /// <summary>
+        /// When click on cancel does nothing and closes the dialog box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected override void OnCancel(object sender, EventArgs args)
         {
             Assert.ArgumentNotNull(sender, "sender");
@@ -28,7 +33,11 @@ namespace SMAE.Foundation.Translator.Repository
                 SheerResponse.Eval("scCancel()");
             }
         }
-
+        /// <summary>
+        /// When click on translate Button (OnOk) sends the data to the js to call the API
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         protected override void OnOK(object sender, EventArgs args)
         {
             Assert.ArgumentNotNull(sender, "sender");
@@ -42,11 +51,13 @@ namespace SMAE.Foundation.Translator.Repository
             else
             {
                 string code = memCode.Value;
-                SheerResponse.Eval("scClose('" + LanguagesList2.SelectedItem.Value + "|" + code + "')");
+                SheerResponse.Eval("scClose('" + LanguagesList.SelectedItem.Value + "|" + code + "')");
             }
         }
 
-        // Properties
+        /// <summary>
+        /// Check the mode of the window
+        /// </summary>
         protected string Mode
         {
             get
@@ -64,28 +75,28 @@ namespace SMAE.Foundation.Translator.Repository
                 base.ServerProperties["Mode"] = value;
             }
         }
+        /// <summary>
+        /// Loads droplist with languages and takes the selected text and populates an input
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             if (!Context.ClientPage.IsEvent)
             {
-                // Populate WFM fields into settings form fields 
+                // Populate fields into settings form fields 
                 PopulateFormFields();
                 string text = WebUtil.GetQueryString("selectedText");
-
-                //set textbox text to selected text
                 memCode.Value = text;
             }
         }
         //populate
         private void PopulateFormFields()
         {
-
-
             List<string> auxLanguages = new List<string> { "English", "Spanish", "French" };
             foreach (var field in auxLanguages)
             {
-                LanguagesList2.Controls.Add(new ListItem()
+                LanguagesList.Controls.Add(new ListItem()
                 {
                     Header = field,
                     Selected = field == auxLanguages.LastOrDefault(),
