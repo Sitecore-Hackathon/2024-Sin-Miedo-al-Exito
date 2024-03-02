@@ -32,7 +32,7 @@ The module solves the problem by allowing the editor to select any text inside o
 Project Publishing
 1.	Download the code and open the solution SME.sln 
 2.	Update the OpenAI Api Key:
-	    Keys are invalidated when they are uploaded to git; to enable the component it is required to provide an APIKey (https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/), or we will provide temporary sample APIKeys at
+	    Keys are invalidated when they are uploaded to git; to enable the component it is required to provide an APIKey (https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/), or you can find some termporary examples at https://docs.google.com/document/d/1qrTxTm4j-hWpHoyIHtHbt353Y-OTII7YMu_FX5W4M2s/edit?hl=es&pli=1
 	    Set API Key at from visual studio at Functaion / Translator / SAME.Fundation.Translator / sitecore / shell / Controls /Rich Text Editor / TranslateBtn / TranslateBtnCommands.js
 	    “const apiKey =”
 
