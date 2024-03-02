@@ -9,9 +9,7 @@ Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, edito
 
     //Retrieve the html selected in the editor
     var html = editor.getSelectionHtml();
-    console.log('s', html);
     scEditor = editor;
-    //scEditor.pasteHtml("new text ", "DocumentManager");
 
 
     //FT CODE
@@ -66,7 +64,7 @@ Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, edito
     }
 
     // Call the function to make the API request
-    makeApiRequest();
+    //makeApiRequest();
 
     //FT CODE
 
@@ -77,8 +75,8 @@ Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, edito
     editor.showExternalDialog(
         "/sitecore/shell/default.aspx?xmlcontrol=RichText.TranslateBtn&la=" + scLanguage,
         null, //argument
-        500, //Height
-        180, //Width
+        700, //Height
+        280, //Width
         scTranslateBtnCallback, //callback
         null, // callback args
         "TranslateBtn",

@@ -48,7 +48,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sitecore\shell\Controls\Rich Text Editor\TranslateBtn\TranslateBtn.cs" />
+    <Compile Include="Repository\TranslateBtn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

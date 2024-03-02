@@ -13,13 +13,15 @@ using Sitecore.Web.UI.HtmlControls;
 using Sitecore.Web.UI.Pages;
 using Sitecore.Web.UI.Sheer;
 
-namespace SMAE.Foundation.Translator.sitecore.shell.Controls.Rich_Text_Editor.TranslateBtn
+namespace SMAE.Foundation.Translator.Repository
 {
     public class TranslateBtn : DialogForm
     {
         // Fields
-        protected Edit TextEdit;
-
+        protected Edit Language1;
+        protected Edit Language2;
+        protected Listbox LanguagesList;
+        protected Listbox LanguagesList2;
         protected override void OnCancel(object sender, EventArgs args)
         {
             Assert.ArgumentNotNull(sender, "sender");
@@ -38,19 +40,15 @@ namespace SMAE.Foundation.Translator.sitecore.shell.Controls.Rich_Text_Editor.Tr
         {
             Assert.ArgumentNotNull(sender, "sender");
             Assert.ArgumentNotNull(args, "args");
-            if (string.IsNullOrWhiteSpace(TextEdit.Value))
-            {
-                SheerResponse.Alert("Please enter a html code.", new string[0]);
-            }
+            
 
             if (this.Mode == "webedit")
             {
-                //SheerResponse.SetDialogValue(StringUtil.EscapeJavascriptString(mediaUrl));
                 base.OnOK(sender, args);
             }
             else
             {
-                SheerResponse.Eval("scClose('" + TextEdit.Value + "')");
+                SheerResponse.Eval("scClose('" + LanguagesList.SelectedItem.Value + " --- " + LanguagesList2.SelectedItem.Value + "')");
             }
         }
 
@@ -70,6 +68,39 @@ namespace SMAE.Foundation.Translator.sitecore.shell.Controls.Rich_Text_Editor.Tr
             {
                 Assert.ArgumentNotNull(value, "value");
                 base.ServerProperties["Mode"] = value;
+            }
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (!Context.ClientPage.IsEvent)
+            {
+                // Populate WFM fields into settings form fields 
+                PopulateFormFields();
+            }
+        }
+        //populate
+        private void PopulateFormFields()
+        {
+
+
+            List<string> auxLanguages = new List<string> { "English", "Spanish", "French" };
+            foreach (var field in auxLanguages)
+            {
+                LanguagesList.Controls.Add(new ListItem()
+                {
+                    Header = field,
+                    Selected = field == auxLanguages.First(),
+                    ID = Control.GetUniqueID("efn"),
+                    Value = field
+                });
+                LanguagesList2.Controls.Add(new ListItem()
+                {
+                    Header = field,
+                    Selected = field == auxLanguages.LastOrDefault(),
+                    ID = Control.GetUniqueID("efn"),
+                    Value = field
+                });
             }
         }
     }

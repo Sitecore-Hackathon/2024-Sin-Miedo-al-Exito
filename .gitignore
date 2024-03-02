@@ -51,3 +51,5 @@ _ReSharper*/
 #Nuget packages folder
 packages/
 /src/Environment/platform/Properties/PublishProfiles/FolderProfile.pubxml
+/src/Environment/platform/Properties/PublishProfiles/Local.pubxml
+/src/Environment/platform/Properties/PublishProfiles/Local.pubxml
