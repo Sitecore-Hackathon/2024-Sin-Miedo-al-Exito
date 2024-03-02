@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMAE.Foundation.Translate",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Translate", "Translate", "{89BBEA02-3005-489F-B309-9A4F400ECDBF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Setup", ".Setup", "{084C7B6F-819D-4679-9FEA-33A30F1B410F}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+		sitecore.json = sitecore.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,7 +34,7 @@ Global
 		{89BBEA02-3005-489F-B309-9A4F400ECDBF} = {ACA5966C-E3F6-4B4B-BAEE-4CB2CBE2856F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2699D7A8-DB29-4DB2-B6EE-AAFBBB12E97B}
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
+		SolutionGuid = {2699D7A8-DB29-4DB2-B6EE-AAFBBB12E97B}
 	EndGlobalSection
 EndGlobal
