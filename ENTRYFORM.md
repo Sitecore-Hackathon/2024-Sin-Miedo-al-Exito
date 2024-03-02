@@ -24,7 +24,6 @@ The module solves the problem by allowing the editor to select any text inside o
 
 [Translation Screenshot](/docs/images/Translation%20Screenshot%201.jpg)
 
- 
 ## Video link
 
 
