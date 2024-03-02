@@ -14,15 +14,15 @@ You can find a very good reference to Github flavoured markdown reference in [th
 
 ## Category
 
-⟹ Write the name of the selected category
+⟹ Best use of AI
 
 ## Description
 
-⟹ Write a clear description of your hackathon entry.
+⟹ Sitecore WYSIWYG content editor translate functionality.
 
--   Module Purpose
--   What problem was solved (if any)
-    -   How does this module solve it
+-   This module helps the editor select any text inside the WYSIWYG content editor and send it to ChatGPT which takes care of the translation and returns a text, which is appended on the same WYSIWYG editor window.
+-   This module solves the necessity of any editor of text translation without leaving the Sitecore environment.
+    -   The editor can highlight any text on the WYSIWYG editor and press a button from the toolbar and I will translate any text to different configurable languages.
 
 _You can alternately paste a [link here](#docs) to a document within this repo containing the description._
 
