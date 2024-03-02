@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{ACA5966C-E3F6-4B4B-BAEE-4CB2CBE2856F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMAE.Foundation.Translate", "src\Foundation\Translate\code\SMAE.Foundation.Translate.csproj", "{96958A52-75A8-40B8-8EAE-556C848889D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Translate", "Translate", "{89BBEA02-3005-489F-B309-9A4F400ECDBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96958A52-75A8-40B8-8EAE-556C848889D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96958A52-75A8-40B8-8EAE-556C848889D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96958A52-75A8-40B8-8EAE-556C848889D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96958A52-75A8-40B8-8EAE-556C848889D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96958A52-75A8-40B8-8EAE-556C848889D3} = {89BBEA02-3005-489F-B309-9A4F400ECDBF}
+		{89BBEA02-3005-489F-B309-9A4F400ECDBF} = {ACA5966C-E3F6-4B4B-BAEE-4CB2CBE2856F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2699D7A8-DB29-4DB2-B6EE-AAFBBB12E97B}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal
