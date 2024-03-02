@@ -11,11 +11,11 @@ Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, edito
     var html = editor.getSelectionHtml();
     console.log('s', html);
     scEditor = editor;
-    scEditor.pasteHtml("new text ", "DocumentManager");
+    //scEditor.pasteHtml("new text ", "DocumentManager");
 
 
     //FT CODE
-    const apiKey = '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';
+    const apiKey = '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';
 
     // Define the prompt you want to send to ChatGPT
     //const prompt = 'Translate the following English text to French: My name is';
@@ -30,6 +30,7 @@ Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, edito
     // Make the API request
     function makeApiRequest() {
         const apiUrl = 'https://api.openai.com/v1/chat/completions';
+        console.log('MakeAPIRequest Start');
 
         return fetch(apiUrl, {
             method: 'POST',
@@ -41,9 +42,10 @@ Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, edito
             body: JSON.stringify({
                 model: 'gpt-3.5-turbo',
                 messages: [
-                    { role: 'system', content: 'You are a helpful assistant.' },
-                    { role: 'user', content: html },
+                    { role: 'user', content: 'Translate to Spanish: ' + html }
                 ],
+                temperature: 0,
+                max_tokens: 20,
             }),
         })
             .then(response => {

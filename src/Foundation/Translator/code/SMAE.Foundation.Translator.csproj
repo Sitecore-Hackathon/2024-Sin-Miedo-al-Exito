@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SMAE.Foundation.Translate</RootNamespace>
-    <AssemblyName>SMAE.Foundation.Translate</AssemblyName>
+    <RootNamespace>SMAE.Foundation.Translator</RootNamespace>
+    <AssemblyName>SMAE.Foundation.Translator</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -43,11 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="sitecore\shell\Controls\Rich Text Editor\TranslateBtn\TranslateBtn.xml" />
     <Content Include="sitecore\shell\Controls\Rich Text Editor\TranslateBtn\TranslateBtnCommands.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Config\Include\Foundation\TranslateBtn.cs" />
+    <Compile Include="sitecore\shell\Controls\Rich Text Editor\TranslateBtn\TranslateBtn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

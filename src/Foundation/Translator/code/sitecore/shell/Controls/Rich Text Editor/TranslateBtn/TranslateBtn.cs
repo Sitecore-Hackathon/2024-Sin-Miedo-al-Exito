@@ -13,7 +13,7 @@ using Sitecore.Web.UI.HtmlControls;
 using Sitecore.Web.UI.Pages;
 using Sitecore.Web.UI.Sheer;
 
-namespace MyNamespace
+namespace SMAE.Foundation.Translator.sitecore.shell.Controls.Rich_Text_Editor.TranslateBtn
 {
     public class TranslateBtn : DialogForm
     {
