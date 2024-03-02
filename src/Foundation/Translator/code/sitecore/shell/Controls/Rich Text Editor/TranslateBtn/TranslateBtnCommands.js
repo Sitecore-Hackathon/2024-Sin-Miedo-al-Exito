@@ -2,7 +2,6 @@
 var scEditor = null;
 var scTool = null;
 
-//Set the Id of your button into the RadEditorCommandList[]
 Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, editor, args) {
     var d = Telerik.Web.UI.Editor.CommandList._getLinkArgument(editor);
     Telerik.Web.UI.Editor.CommandList._getDialogArguments(d, "A", editor, "DocumentManager");
@@ -10,70 +9,9 @@ Telerik.Web.UI.Editor.CommandList["TranslateBtn"] = function (commandName, edito
     //Retrieve the html selected in the editor
     var html = editor.getSelectionHtml();
     scEditor = editor;
-
-
-    //FT CODE
-    const apiKey = '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';
-
-    // Define the prompt you want to send to ChatGPT
-    //const prompt = 'Translate the following English text to French: My name is';
-
-    // Define additional parameters such as temperature and max tokens
-    const options = {
-        temperature: 0.7,
-        max_tokens: 150,
-        stop: '\n',
-    };
-
-    // Make the API request
-    function makeApiRequest() {
-        const apiUrl = 'https://api.openai.com/v1/chat/completions';
-        console.log('MakeAPIRequest Start');
-
-        return fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Authorization': `Bearer ${apiKey}`,
-            },
-            body: JSON.stringify({
-                model: 'gpt-3.5-turbo',
-                messages: [
-                    { role: 'user', content: 'Translate to Spanish: ' + html }
-                ],
-                temperature: 0,
-                max_tokens: 20,
-            }),
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Output the generated message
-                const generatedMessage = data.choices[0].message.content;
-                scEditor.pasteHtml(generatedMessage, "DocumentManager");
-                console.log('Generated Message:', generatedMessage);
-            })
-            .catch(error => {
-                console.error('Error making API request:', error.message);
-            });
-    }
-
-    // Call the function to make the API request
-    //makeApiRequest();
-
-    //FT CODE
-
-
-
-
     //Call your custom dialog box
     editor.showExternalDialog(
-        "/sitecore/shell/default.aspx?xmlcontrol=RichText.TranslateBtn&la=" + scLanguage,
+        "/sitecore/shell/default.aspx?xmlcontrol=RichText.TranslateBtn&la=" + scLanguage + "&selectedText=" + escape(html),
         null, //argument
         700, //Height
         280, //Width
@@ -92,12 +30,55 @@ function scTranslateBtnCallback(sender, returnValue) {
     if (!returnValue) {
         return;
     }
+    const returnArray = returnValue.text.split('|');
 
-    //You may retreive some code from your returnValue
+    // Call the function to make the API request
+    makeApiRequest(returnArray[0], returnArray[1]);
 
-    //For the example I add Hello and my return value in the Rich Text
-    scEditor.pasteHtml("Hello " + returnValue.text, "DocumentManager");
 }
+
+//OpenAI API KEY
+
+const apiKey = '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';
+
+// Make the API request
+function makeApiRequest(language, valueHtml) {
+    const apiUrl = 'https://api.openai.com/v1/chat/completions';
+    console.log('MakeAPIRequest Start');
+
+    return fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            messages: [
+                { role: 'user', content: 'Translate to ' + language + ': ' + valueHtml }
+            ],
+            temperature: 0,
+            max_tokens: 20,
+        }),
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Output the generated message
+            const generatedMessage = data.choices[0].message.content;
+            scEditor.pasteHtml(generatedMessage, "DocumentManager");
+            console.log('Generated Message:', generatedMessage);
+        })
+        .catch(error => {
+            console.error('Error making API request:', error.message);
+        });
+}
+
 function GetDialogArguments() {
     return getRadWindow().ClientParameters;
 }

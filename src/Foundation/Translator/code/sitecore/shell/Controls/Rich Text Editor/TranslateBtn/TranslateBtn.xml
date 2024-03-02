@@ -1,6 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
     <RichText.TranslateBtn>
+        <Stylesheet>
+            #textTo{
+            display:block;
+            margin-bottom:5px;
+            font-weight:600;
+            }
+
+
+            #memCode{
+            color:#000;
+            height:100%;
+            width:100%;
+            border:1px solid #999;
+            margin-top:10px;
+            }
+        </Stylesheet>
         <FormDialog Icon="Network/32x32/link.png" Header="Select your language"
           Text="Insert a html code." OKButton="Translate">
 
@@ -8,17 +24,18 @@
 
             <CodeBeside Type="SMAE.Foundation.Translator.Repository.TranslateBtn,SMAE.Foundation.Translator"/>
 
-            <Border Padding="4px 10px 4px 0px">
-                <GridPanel Width="100%" Columns="2">
-                    <Border Padding="0px 4px 10px 10px">
-                        <Literal Text="From:"/>
-                    </Border>
-                    <Listbox ID="LanguagesList" Width="97%" GridPanel.Width="80%"/>
-                    <Border Padding="0px 4px 10px 10px">
-                        <Literal Text="To:"/>
-                    </Border>
-                    <Listbox ID="LanguagesList2" Width="97%" GridPanel.Width="80%"/>
+            <Border Padding="0px 10px 10px 10px">
+                <GridPanel Width="100%" Columns="1">
+
+                    <Literal Text="To:" Style="margin-bottom:5px;"  ID="textTo"/>
+
+                    <Listbox ID="LanguagesList"/>
+
+                    <Memo ID="memCode" Width="100%" ></Memo>
+
+
                 </GridPanel>
+
             </Border>
         </FormDialog>
     </RichText.TranslateBtn>
